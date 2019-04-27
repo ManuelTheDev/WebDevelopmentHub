@@ -1,11 +1,11 @@
 <head>
      <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Rubrica Example</title>
+    <title>Revisar Rubrica</title>
 </head>
     <body ng-app="app">
 
-        <h1 class="h1">Agregar criterio</h1>
+        <h1 class="h1">Pantalla donde el usuario revisa la rubrica</h1>
 
         <div class="container" ng-controller="myController">
             <p>{{nombre}}</p>
@@ -18,7 +18,7 @@
                 </li>
             </ul>
 
-            <form ng-submit="agregarCriterio()">
+            <form ng-submit="corregirRubrica(criterio)">
                 <div class="form-group">
                     <input class="form-control"type="text" placeholder="Nombre del Criterio" ng-model="newCriterio.nombre">
                 </div>
@@ -26,7 +26,7 @@
                     <input class="form-control" type="text" placeholder="Puntaje Máximo" ng-model="newCriterio.puntajeMaximo">
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Agregar criterio</button>
+                <button type="submit" class="btn btn-primary">Corregir rubrica</button>
             </form>
 
 

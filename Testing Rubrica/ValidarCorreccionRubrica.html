@@ -1,0 +1,43 @@
+<head>
+        <!-- Bootstrap CSS -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       <title>Validar Corrección de la Rúbrica</title>
+   </head>
+       <body ng-app="app">
+   
+           <h1 class="h1">Pantalla donde el PROFESOR valida la corrección de la Rúbrica</h1>
+   
+           <div class="container" ng-controller="myController">
+                <p>Actividad: Laboratorio 2</p>
+   
+               <ul class ="list-inline">
+                   <li class="list-inline-item" ng-repeat="criterio in listaCriterios" ng-init="criterioIndex = $index">
+                       <h1 class="h1">Criterio {{criterioIndex + 1}}</h1>
+                       <h3><span class="h1">Nombre Criterio:</span>  {{criterio.nombre}}</h3>
+                       <h3><span class="h1">Puntaje Asignado:</span>  {{criterio.puntajeAsignado}}</h3>
+                       <h3><span class="h1">Puntaje Máximo:</span>  {{criterio.puntajeMaximo}}</h3> 
+                       <h3><span class="h1">Comentario:</span> {{criterio.comentario}}</h3> 
+                       <br>
+                   </li>
+               </ul>
+   
+               <form ng-submit="corregirRubrica(criterio)">
+                   <button type="submit" class="btn btn-info" ng-click="mostrarConfirmacion()">Validar corrección</button>
+
+               </form>
+   
+   
+   
+           </div>
+   
+           <!-- Optional JavaScript -->
+           <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+           <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+           <script src="app.js"></script>
+           <link rel="stylesheet" href="css/style.css">
+   
+       </body>
+   
