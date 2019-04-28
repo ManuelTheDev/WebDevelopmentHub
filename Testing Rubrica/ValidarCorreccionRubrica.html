@@ -1,34 +1,66 @@
+<div class="container">
+
+
 <head>
         <!-- Bootstrap CSS -->
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
        <title>Validar Corrección de la Rúbrica</title>
    </head>
-       <body ng-app="app">
+       <body ng-app="app" ng-controller="myController">
    
-           <h1 class="h1">Pantalla donde el PROFESOR valida la corrección de la Rúbrica</h1>
-   
-           <div class="container" ng-controller="myController">
-                <p>Actividad: Laboratorio 2</p>
-   
-               <ul class ="list-inline">
-                   <li class="list-inline-item" ng-repeat="criterio in listaCriterios" ng-init="criterioIndex = $index">
-                       <h1 class="h1">Criterio {{criterioIndex + 1}}</h1>
-                       <h3><span class="h1">Nombre Criterio:</span>  {{criterio.nombre}}</h3>
-                       <h3><span class="h1">Puntaje Asignado:</span>  {{criterio.puntajeAsignado}}</h3>
-                       <h3><span class="h1">Puntaje Máximo:</span>  {{criterio.puntajeMaximo}}</h3> 
-                       <h3><span class="h1">Comentario:</span> {{criterio.comentario}}</h3> 
-                       <br>
-                   </li>
-               </ul>
+           <h1 class="h1">Rúbrica de la evaluación: </h1>
+           <button type="submit" class="btn btn-primary">Crear una nueva rúbrica</button>
+           <button type="submit" class="btn btn-success">Usar una rúbrica pasada</button>
+            <br><br>
+
+           <div class="card text-left border-success">
+                <div class="form-group row">
+                    <div class="col-2">
+                        <p>Nombre Rúbrica:</p>
+                    </div>
+                    <div class=" col-4">
+                        <input class="form-control" type="text" placeholder="Ingrese el nombre de la rúbrica">
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-danger">Ingresar nuevo criterio</button>
+                        <button type="submit" class="btn btn-danger">Guardar rúbrica</button>
+                    </div>
+                
+                    <!-- 
+                        <ul class ="list-inline">
+                            <li class="list-inline-item" ng-repeat="criterio in listaCriterios" ng-init="criterioIndex = $index">
+                                <h1 class="h1">Criterio {{criterioIndex + 1}}</h1>
+                                <h3><span class="h1">Nombre Criterio:</span>  {{criterio.nombre}}</h3>
+                                <h3><span class="h1">Puntaje Asignado:</span>  {{criterio.puntajeAsignado}}</h3>
+                                <h3><span class="h1">Puntaje Máximo:</span>  {{criterio.puntajeMaximo}}</h3> 
+                                <h3><span class="h1">Comentario:</span> {{criterio.comentario}}</h3> 
+                                <br>
+                            </li>
+                        </ul>
+
+                     -->
+                    
+
    
                <form ng-submit="corregirRubrica(criterio)">
                    <button type="submit" class="btn btn-info" ng-click="mostrarConfirmacion()">Validar corrección</button>
 
                </form>
    
+            </div>
+
+         <!-- Agregar 2 botones: btnCrearUnaNuevaRúbrica y UsarUnaRúbricaPasada (LISTO)
+         Colocar un cuadrado grande (copiar de Curso)
+         Colocar en una sola línea
+            Nombre: (input) btnIngresarNuevoCriterio btnGuardarRubrica
+            Luego van las familias con sus respectivos criterios
+
+         --> 
+   
+           
    
    
-           </div>
+           
    
            <!-- Optional JavaScript -->
            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -40,4 +72,4 @@
            <link rel="stylesheet" href="css/style.css">
    
        </body>
-   
+</div>
